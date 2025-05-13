@@ -1,12 +1,8 @@
-Here’s a complete README.md file for your project based on the FastAPI knowledge base backend you’re building:
-
-README.md
-
-# 🍽️ BBQ Nation Knowledge Base API
+# BBQ Nation
 
 This project is a FastAPI-based backend API that serves information about BBQ Nation branches, menus, offers, and other relevant data. It supports querying by city, branch, and categories like menu, timings, booking instructions, etc.
 
-## 🚀 Features
+## Features
 
 * Get a list of available properties (cities)
 * Fetch branch details by name
@@ -16,7 +12,7 @@ This project is a FastAPI-based backend API that serves information about BBQ Na
 * Menu data integrated via JSON files
 * Token length management for response trimming
 
-## 📁 Project Structure
+## Project Structure
 
 .
 ├── app/
@@ -35,7 +31,7 @@ This project is a FastAPI-based backend API that serves information about BBQ Na
 ├── requirements.txt                 # Project dependencies
 └── README.md
 
-## 📦 Setup Instructions
+## Setup Instructions
 
 1. Clone the repository:
 
@@ -66,7 +62,7 @@ This project is a FastAPI-based backend API that serves information about BBQ Na
    bash
    uvicorn main\:app --reload
 
-## 🌐 API Endpoints
+## API Endpoints
 
 | Endpoint                 | Method | Description                               |
 | ------------------------ | ------ | ----------------------------------------- |
@@ -76,7 +72,7 @@ This project is a FastAPI-based backend API that serves information about BBQ Na
 | /query                   | POST   | Query menu, booking, or property info     |
 | /categories              | GET    | Available query categories                |
 
-## 🧠 Query Example
+## Query Example
 
 POST /query
 
@@ -99,7 +95,7 @@ json
 "tokens": 46
 }
 
-## ⚠️ Notes
+## Notes
 
 * The API supports normalization of city names like "new delhi" → "Delhi"
 * Branch data is loaded from the data directory at startup
