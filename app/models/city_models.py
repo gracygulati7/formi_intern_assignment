@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 from typing import List, Optional, Dict
 
-class MeaTiming(BaseModel):
+class MealTiming(BaseModel):
     opening_time: str
     last_entry_time: str
     closing_time: str
