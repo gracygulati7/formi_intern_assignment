@@ -14,7 +14,7 @@ This project is a FastAPI-based backend API that serves information about BBQ Na
 
 ## Project Structure
 
-.
+```
 ├── app/
 │   ├── api/
 │   │   └── knowledge\_base.py        # Main API logic
@@ -30,6 +30,7 @@ This project is a FastAPI-based backend API that serves information about BBQ Na
 ├── main.py                          # FastAPI app entry point
 ├── requirements.txt                 # Project dependencies
 └── README.md
+```
 
 ## Setup Instructions
 
