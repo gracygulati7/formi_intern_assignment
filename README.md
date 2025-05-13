@@ -37,28 +37,34 @@ This project is a FastAPI-based backend API that serves information about BBQ Na
 1. Clone the repository:
 
    bash
+   ```
    git clone [https://github.com/gracygulati7/formi_intern_assignment.git](https://github.com/gracygulati7/formi_intern_assignment.git)
    cd formi_intern_assignment
+   ```
 
-2. Create a virtual environment:
+3. Create a virtual environment:
 
    bash
+   ```
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-3. Install dependencies:
+5. Install dependencies:
 
    bash
+   ```
    pip install -r requirements.txt
+   ```
 
-4. Create your environment config in app/core/config.py or via .env:
+7. Create your environment config in app/core/config.py or via .env:
 
    Example:
 
    python
    KNOWLEDGE\_BASE\_PATH = "./data"
 
-5. Run the FastAPI app:
+8. Run the FastAPI app:
 
    bash
    uvicorn main\:app --reload
