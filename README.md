@@ -37,7 +37,7 @@ This project is a FastAPI-based backend API that serves information about BBQ Na
 1. Clone the repository:
 
    bash
-   git clone [https://github.com/gracygulati7/bbq-nation.git](https://github.com/gracygulati7/formi_intern_assignment.git)
+   git clone [https://github.com/gracygulati7/formi_intern_assignment.git](https://github.com/gracygulati7/formi_intern_assignment.git)
    cd formi_intern_assignment
 
 2. Create a virtual environment:
