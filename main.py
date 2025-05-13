@@ -8,7 +8,6 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -17,7 +16,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Routers
 app.include_router(knowledge_base.router, prefix="/api/kb", tags=["Knowledge Base"])
 app.include_router(chatbot.router, prefix="/api/chat", tags=["Chatbot"])
 app.include_router(post_call.router, prefix="/api/analysis", tags=["Post-Call Analysis"])

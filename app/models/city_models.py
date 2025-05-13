@@ -1,57 +1,31 @@
-# from pydantic import BaseModel, Field
-# from typing import List, Optional, Dict
+from pydantic import BaseModel, Field
+from typing import List, Optional, Dict
 
-# class BranchTiming(BaseModel):
-#     opening_time: str
-#     last_entry_time: str
-#     closing_time: str
+class MeaTiming(BaseModel):
+    opening_time: str
+    last_entry_time: str
+    closing_time: str
 
-# class DayTimings(BaseModel):
-#     Lunch: Optional[BranchTiming]
-#     Dinner: Optional[BranchTiming]
+class DayTiming(BaseModel):
+    Lunch: MealTiming
+    Dinner: MealTiming
 
-# class BranchInfo(BaseModel):
-#     address: str
-#     bar_availability: str
-#     valet_parking: str
-#     baby_chair: str
-#     lift_availability: str
-#     pdr_availability: str
-#     pdr_capacity: str
-#     pdr_minimum_pax_required: str
-#     outlet_numbers: List[str]
+class BranchTimings(BaseModel):
+    Monday_to_Friday: DayTiming
+    Saturday: DayTiming
+    Sunday: DayTiming
 
-# class NearestOutlet(BaseModel):
-#     name: str
-#     distance: str
-#     address: str
+class BranchInfo(BaseModel):
+    pdr_capacity: Optional[int]
+    pdr_minimum_pax_required: Optional[int]
 
-# class Offers(BaseModel):
-#     early_bird: str
-#     kitty_party: str
-#     student_offer: str
-#     buffet_5_plus_1: str = Field(..., alias="5+1_buffet")
-#     army_offer: str
-#     drinks_offer: str
+class Branch(BaseModel):
+    name: str
+    address: str
+    booking_instructions: Dict[str, Dict[str, str]] # e.g., { "Monday": { "2+1": "Instruction" } }
+    branch_timings: BranchTimings
+    branch_info: BranchInfo
 
-# class AdditionalInfo(BaseModel):
-#     complimentary_drinks: str
-#     food_festival: str
-
-# class BookingInstructions(BaseModel):
-#     root: Dict[str, Dict[str, str]]
-
-# class Branch(BaseModel):
-#     name: str
-#     modified_on: str
-#     special_notice: Optional[str]
-#     booking_instructions: BookingInstructions
-#     branch_info: BranchInfo
-#     branch_timings: Dict[str, DayTimings]
-#     additional_info: AdditionalInfo
-#     nearest_outlets: List[NearestOutlet]
-#     offers: Offers
-
-# class CityData(BaseModel):
-#     city: str
-#     branches: List[Branch]
+class CityData(BaseModel):
+    city: str   
+    branches: List[Branch]
